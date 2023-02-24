@@ -70,9 +70,10 @@ public class TestTP1Bank {
 
 				while(userChoice != 6) {
 					displayMenu();
+					try {
 					userChoice = scan.nextInt();
 
-					try {
+					
 						switch(userChoice) {
 						case 1:
 							System.out.println("Saisissez le montant à verser sur le compte.");
@@ -103,9 +104,11 @@ public class TestTP1Bank {
 							break;
 						default:
 							System.out.println("Ce menu n'existe pas.");
+							break;
 						}
 					} catch (InputMismatchException e) {
 						System.out.println("Mauvaise saisie du menu.");
+						scan.nextLine();
 					}
 
 				}//end while
@@ -113,7 +116,8 @@ public class TestTP1Bank {
 			} catch (NullPointerException e) {
 				System.out.println("Ce compte n'existe pas" );
 			}catch (InputMismatchException e) {
-				System.out.println("Mauvaise saisie du menu.");
+				System.out.println("Mauvaise saisie du menu Principal.");
+				scan.nextLine();
 			}
 		}
 
